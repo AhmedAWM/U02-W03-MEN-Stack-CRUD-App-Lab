@@ -48,10 +48,33 @@ app.post('/cars', async (request, response) => {
     response.redirect('/cars');
 });
 
-app.get('/cars/:id', async (request, response) => {
+app.get('/car/:id', async (request, response) => {
     const car = await Car.findById(request.params.id);
 
     response.render('car.ejs', { car : car });
+});
+
+app.get('/car/:id/edit', async (request, response) => {
+    const car = await Car.findById(request.params.id);
+
+    response.render('edit.ejs', { car : car });
+});
+
+app.put('/car/:id', async (request, response) => {
+    const id = request.params.id;
+    const car = request.body;
+
+    await Car.findByIdAndUpdate(id, car);
+
+    response.redirect(`/car/${id}`);
+});
+
+app.delete('/car/:id/delete', async (request, response) => {
+    const id = request.params.id;
+
+    await Car.findByIdAndDelete(id);
+
+    response.redirect(`/cars/`);
 });
 
 // Port

@@ -17,8 +17,10 @@
             <h2><%= car.hp %> Horsepower</h2>
 
             <div class="edit-delete-buttons">
-                <a href="/edit/<%= car.id %>">Edit</a>
-                <a href="/delete/<%= car.id %>">Delete</a>
+                <a href="/car/<%= car.id %>/edit">Edit</a>
+                <form action="/car/<%=car._id%>/delete?_method=DELETE" method="POST">
+                    <button class="delete-button">Delete</button>
+                </form>
             </div>
         </section>
         

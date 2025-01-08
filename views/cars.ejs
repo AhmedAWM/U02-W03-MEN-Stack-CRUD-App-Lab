@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars List</title>
+
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <main>
+        <section class="cars-list">
+            <% if(allCars.length === 0) { %>
+                <div class="no-cars-found">
+                    <center><img src="/img/empty.svg" alt="No Cars Found" class="no-cars-img"></center>
+                    <p>No cars found</p>
+                </div>
+                <div class="add-car"><a href="/cars/new" class="add-car-button">Add a car</a></div>
+            <% } else { %>
+                <div class="add-car"><a href="/cars/new" class="add-car-button">Add a car</a></div>
+                <% allCars.forEach((car) => { %>
+                    <div class="car-list-item">
+                        <div class="car-image">
+                            <img src="<%= car.image %>" alt="<%= car.year + ' ' + car.brand + ' ' + car.model %>">
+                        </div>
+                        <div class="car-list-details">
+                            <p><b>Brand: </b><%= car.brand %></p>
+                            <p><b>Model: </b><%= car.model %></p>
+                        </div>
+                        <div class="more-details-button">
+                            <a href="/cars/<%= car.id %>/">Car Details →</a>
+                        </div>
+                    </div>
+               <% });
+            } %>
+        </section>
+    </main>
+</body>
+</html>

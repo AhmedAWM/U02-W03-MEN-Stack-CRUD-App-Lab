@@ -1,0 +1,28 @@
+{
+  "name": "u02-w03-men-stack-crud-app-lab",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedAWM/U02-W03-MEN-Stack-CRUD-App-Lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhmedAWM/U02-W03-MEN-Stack-CRUD-App-Lab/issues"
+  },
+  "homepage": "https://github.com/AhmedAWM/U02-W03-MEN-Stack-CRUD-App-Lab#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.9.3"
+  }
+}

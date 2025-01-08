@@ -7,10 +7,10 @@ const app = express();
 
 // Initializations
 dotenv.config();
-app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride("_method"));
 
 // Middlewares
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
 
 // Serve static files from the 'public' directory
 app.use(express.static("public"));
